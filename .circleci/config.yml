@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   project3-app:
     docker:
-      - image: circleci/node:16.20.1
+      - image: circleci/node:14.17.6
     steps:
       - checkout
   build-docker:
@@ -21,7 +21,7 @@ jobs:
             docker tag udagram-frontend longtran020299/udagram-frontend:v1
             docker build -t udagram-reverseproxy ./udagram-reverseproxy
             docker tag udagram-reverseproxy longtran020299/udagram-reverseproxy:v1
-            docker login -u $DOCKERUSER -p $DOCKERPASS
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             docker push longtran020299/udagram-api-feed:v1
             docker push longtran020299/udagram-api-user:v1
             docker push longtran020299/udagram-frontend:v1
