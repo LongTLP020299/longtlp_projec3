@@ -30,7 +30,7 @@ import { V0_USER_MODELS } from "./controllers/v0/model.index";
         "Content-Type",
         "Accept",
         "X-Access-Token",
-        "Authorization",
+        "Authorization"
       ],
       methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
       preflightContinue: true,
